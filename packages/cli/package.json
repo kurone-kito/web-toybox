@@ -1,0 +1,62 @@
+{
+  "name": "@kurone-kito/pwt-cli",
+  "version": "0.1.0",
+  "private": true,
+  "description": "The CLI app boilerplate",
+  "keywords": [
+    "cli",
+    "command-line",
+    "boilerplate",
+    "template"
+  ],
+  "homepage": "https://github.com/kurone-kito/pnpm-workspace-template#readme",
+  "bugs": "https://github.com/kurone-kito/pnpm-workspace-template/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kurone-kito/pnpm-workspace-template.git",
+    "directory": "packages/cli"
+  },
+  "license": "MIT",
+  "author": "kurone-kito <krone@kit.black> (https://kit.black/)",
+  "type": "module",
+  "bin": {
+    "pwt-cli": "./dist/index.cjs"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "vite build",
+    "build:sea": "sea-builder --targets=darwin-arm64,darwin-x64,linux-arm64,linux-x64,win-arm64,win-x64 pwt-cli",
+    "clean": "rimraf -g \"*.tgz\" \"*.tsbuildinfo\" coverage dist LICENSE node_modules/.cache sea",
+    "dev": "vite build --watch",
+    "devPreinstall": "pnpm dlx mkdirp dist && pnpm dlx shx head -n 1 src/index.mts > dist/index.cjs",
+    "prebuild": "cpy --flat ../../LICENSE .",
+    "prebuild:sea": "pnpm run build",
+    "prepack": "pnpm run clean && pnpm run build",
+    "test": "pnpm run \"/test:.+/\"",
+    "test:ts": "tsc -p tsconfig.test.json --noEmit",
+    "test:vitest": "vitest run --coverage"
+  },
+  "dependencies": {
+    "@kurone-kito/pwt-lib": "workspace:^"
+  },
+  "devDependencies": {
+    "@kurone-kito/sea-builder": "^0.22.0-alpha.4",
+    "@kurone-kito/typescript-config": "^0.22.0-alpha.4",
+    "@kurone-kito/vite-lib-config": "^0.22.0-alpha.4",
+    "@vitest/coverage-v8": "^4.0.18",
+    "cpy-cli": "^6.0.0",
+    "rimraf": "^6.1.2",
+    "typescript": "~5.9.3",
+    "vite": "^7.3.1",
+    "vitest": "^4.0.18",
+    "xsea": "^0.1.2"
+  },
+  "engines": {
+    "node": "^20.18 || ^22 || >=24"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

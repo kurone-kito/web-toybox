@@ -6,3 +6,18 @@ cache:
 import:
   - '@kurone-kito/cspell-config'
 version: '0.2'
+words:
+  - libatk
+  - libx
+  - libxcomposite
+  - libxdamage
+  - libxrandr
+  - libgbm
+  - libasound
+  - libatspi
+  - libxshmfence
+  - libxkbcommon
+  - libpangocairo
+  - solidjs
+  - vinxi
+  - xsea

@@ -1,0 +1,63 @@
+name: The CI workflow on merge as a main branch
+run-name: Merged the main branch by @${{ github.actor }}
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+    branches:
+      - main
+permissions:
+  contents: write
+jobs:
+  update_release_draft:
+    permissions:
+      contents: write
+      pull-requests: write
+    runs-on: ubuntu-latest
+    steps:
+      - uses: release-drafter/release-drafter@v6
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  build-website:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    name: Build and deploy to GitHub Pages
+    runs-on: ubuntu-latest
+    steps:
+      - name: Stages the pushed branch
+        uses: actions/checkout@v6
+      - name: Setup the pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          run_install: false
+      - name: Prepare the Node.js environment
+        uses: actions/setup-node@v6
+        with:
+          cache: pnpm
+          check-latest: true
+          node-version-file: .node-version
+      - env:
+          HUSKY: 0
+        name: Install the dependencies
+        run: pnpm install --frozen-lockfile --prefer-offline
+      - env:
+          BASE_PATH: /pnpm-workspace-template
+        name: Run the build process
+        run: pnpm run build
+      - name: Prepare for GitHub Pages deployment
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+      - name: Upload to GitHub Pages artifacts
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: packages/web-solid/.output/public
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

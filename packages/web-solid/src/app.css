@@ -1,0 +1,4 @@
+@import "tailwindcss";
+@import "@kurone-kito/vrc-icons-tw";
+@import "tailwindcss-safe-area";
+@plugin "daisyui";

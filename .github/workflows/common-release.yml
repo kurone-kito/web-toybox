@@ -1,0 +1,121 @@
+name: Build and release
+on:
+  workflow_call:
+    inputs:
+      next:
+        default: false
+        description: Publish the alpha version
+        type: boolean
+    secrets:
+      NPM_TOKEN:
+        required: true
+permissions:
+  contents: write
+  packages: write
+jobs:
+  publish:
+    name: Publish to ${{ matrix.registry.name }}
+    runs-on: ubuntu-slim
+    steps:
+      - name: Stages the pushed branch
+        uses: actions/checkout@v6
+      - name: Setup the pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          run_install: false
+      - name: Prepare the Node.js environment
+        uses: actions/setup-node@v6
+        with:
+          cache: pnpm
+          check-latest: true
+          node-version-file: .node-version
+      - env:
+          HUSKY: 0
+        name: Install the dependencies
+        run: pnpm install --frozen-lockfile --prefer-offline
+      - if: ${{ inputs.next == true }}
+        name: Check the whether the current version is prerelease
+        run: pnpm run is:prerelease
+      - if: ${{ inputs.next != true }}
+        name: Check the whether the current version is not prerelease
+        run: pnpm run is:release
+      - env:
+          BASE_PATH: /pnpm-workspace-template
+        name: Build the project explicitly. The workaround is provisional because the publish command does not perform topological sorting.
+        run: pnpm run build
+      - env:
+          AUTH_TOKEN: ${{ matrix.registry.token == 'NPM_TOKEN' && secrets.NPM_TOKEN || secrets.GITHUB_TOKEN }}
+          REGISTRY_URL: ${{ matrix.registry.url }}
+        name: Setting the ${{ matrix.registry.name }} registry and the token
+        run: |
+          cat <<- EOF > "${HOME}/.npmrc"
+          registry=$REGISTRY_URL
+          @kurone-kito:registry=$REGISTRY_URL
+          //${REGISTRY_URL#https://}:_authToken=$AUTH_TOKEN
+          EOF
+      - env:
+          AUTH_TOKEN: ${{ matrix.registry.token == 'NPM_TOKEN' && secrets.NPM_TOKEN || secrets.GITHUB_TOKEN }}
+        if: ${{ !inputs.next }}
+        name: Publish the packages to ${{ matrix.registry.name }}
+        run: pnpm run publish --no-git-check
+      - env:
+          AUTH_TOKEN: ${{ matrix.registry.token == 'NPM_TOKEN' && secrets.NPM_TOKEN || secrets.GITHUB_TOKEN }}
+        if: ${{ inputs.next }}
+        name: Publish the packages to ${{ matrix.registry.name }} as the alpha version
+        run: pnpm run publish:next --no-git-check
+    strategy:
+      fail-fast: false
+      matrix:
+        registry:
+          - name: npm
+            url: https://registry.npmjs.org/
+            token: NPM_TOKEN
+          - name: GitHub Packages
+            url: https://npm.pkg.github.com/
+            token: GITHUB_TOKEN
+    timeout-minutes: 5
+
+  attach-assets:
+    name: Attach release assets
+    if: ${{ github.event_name == 'release' }}
+    runs-on: ubuntu-slim
+    steps:
+      - name: Stages the pushed branch
+        uses: actions/checkout@v6
+      - name: Setup the pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          run_install: false
+      - name: Prepare the Node.js environment
+        uses: actions/setup-node@v6
+        with:
+          cache: pnpm
+          check-latest: true
+          node-version-file: .node-version
+      - env:
+          HUSKY: 0
+        name: Install the dependencies
+        run: pnpm install --frozen-lockfile --prefer-offline
+      - env:
+          BASE_PATH: /pnpm-workspace-template
+        name: Build the project explicitly. The workaround is provisional because the publish command does not perform topological sorting.
+        run: pnpm run build
+      - name: pack the packages
+        run: pnpm --filter "!*builder-config" -r pack
+      - name: Build the project explicitly. The workaround is provisional because the publish command does not perform topological sorting.
+        run: pnpm run build:sea
+      - name: Compress the SEA binaries
+        run: |
+          cd packages/cli/sea
+          for bin in *; do
+            zip -9 "${bin}.zip" "$bin"
+          done
+      - env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        name: Uploading assets to the release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            ./*.tgz
+            packages/cli/sea/*.zip
+    timeout-minutes: 5

@@ -259,5 +259,23 @@ $RECYCLE.BIN/
 ### THE PROJECT SPECIFIES #################################################
 
 ### Node ###
+# Playwright
+test-results/
+
 # pnpm
 pnpm-lock.yaml.*
+
+# Vinxi
+.output/
+.vinxi/
+
+# Vite / Vitest
+v8-compile-cache-*
+*.config.timestamp_*
+
+# xsea
+sea
+
+### Text ###
+# LICENSE
+packages/*/LICENSE

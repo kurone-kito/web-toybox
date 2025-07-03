@@ -1,15 +1,24 @@
 {
+  "editor.defaultFormatter": "biomejs.biome",
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
   "explorer.fileNesting.patterns": {
+    "*.d.mts": "${capture}.mjs, ${capture}.mjs.*, ${capture}.d.mts.*",
+    "*.js": "${capture}.js.*",
     "*.md": "${capture}.*.md",
+    "*.mjs": "${capture}.mjs.*",
+    "*.mts": "${capture}.*.mts, ${capture}.*.tsx",
+    "*.tsx": "${capture}.*.mts, ${capture}.*.tsx",
     ".gitattributes": ".gitignore",
     ".markdownlint.*": ".markdownlint-cli2.*",
     ".tool-versions": ".node-version, .nvmrc",
     "package.json": ".npmrc, pnpm-lock.yaml, pnpm-workspace.yaml",
-    "tsconfig.json": "*.tsbuildinfo"
+    "tsconfig.json": "*.tsbuildinfo, tsconfig.*.json",
+    "vite.config.mts": "vitest.config.mts"
   },
   "files.associations": {
+    "*.css": "tailwindcss",
+    "*.map": "json",
     ".imgbotconfig": "json",
     "LICENSE": "plaintext"
   },
@@ -17,9 +26,29 @@
     "**/node_modules/**/*": true
   },
   "files.watcherExclude": {
-    "**/node_modules/**/*": true
+    "**/*.tgz": true,
+    "**/*.tsbuildinfo": true,
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/.husky/_/**": true,
+    "**/.output/**": true,
+    "**/.vinxi/**": true,
+    "**/coverage/**": true,
+    "**/dist/**": true,
+    "**/node_modules/**": true,
+    "**/pnpm-lock.yaml.*": true,
+    "**/test-results/**": true
   },
   "git.branchProtection": ["main"],
+  "material-icon-theme.files.associations": {
+    "*.map": "javascript-map",
+    ".imgbotconfig": "robots"
+  },
+  "material-icon-theme.folders.associations": {
+    ".vim": "command",
+    "test-results": "coverage",
+    "web-solid": "public"
+  },
   "search.exclude": {
     "**/node_modules/**/*": true
   },

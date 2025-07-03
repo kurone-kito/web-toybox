@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "checkJs": false,
+    "jsx": "preserve",
+    "jsxImportSource": "solid-js",
+    "lib": ["DOM", "ES2023"],
+    "module": "es2022",
+    "moduleResolution": "Bundler",
+    "noEmit": true,
+    "skipLibCheck": true,
+    "types": ["@solidjs/start/env", "node", "vinxi/types/client"]
+  },
+  "exclude": [".output", ".vinxi", "coverage", "node_modules"],
+  "extends": "@kurone-kito/typescript-config",
+  "include": ["src/**/*.tsx", "*.config.mts"]
+}
