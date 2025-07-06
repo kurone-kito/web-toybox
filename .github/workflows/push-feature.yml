@@ -39,7 +39,7 @@ jobs:
         name: Install the dependencies
         run: pnpm install --frozen-lockfile --prefer-offline
       - env:
-          BASE_PATH: /pnpm-workspace-template
+          BASE_PATH: /web-toybox
         name: Build the project
         run: pnpm run build
       - name: Check the code style

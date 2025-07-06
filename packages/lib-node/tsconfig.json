@@ -1,9 +1,10 @@
 {
   "compilerOptions": {
-    "lib": ["DOM", "ES2023"],
+    "lib": ["DOM", "ES2023", "ESNext.Disposable"],
     "noEmit": true,
     "rootDir": "src"
   },
+  "include": ["src/**/*"],
   "exclude": ["coverage", "dist", "node_modules"],
   "extends": "@kurone-kito/typescript-config"
 }

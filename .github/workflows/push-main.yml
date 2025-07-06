@@ -47,7 +47,7 @@ jobs:
         name: Install the dependencies
         run: pnpm install --frozen-lockfile --prefer-offline
       - env:
-          BASE_PATH: /pnpm-workspace-template
+          BASE_PATH: /web-toybox
         name: Run the build process
         run: pnpm run build
       - name: Prepare for GitHub Pages deployment

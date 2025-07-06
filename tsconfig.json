@@ -1,8 +1,9 @@
 {
   "files": [],
   "references": [
-    { "path": "./packages/cli/tsconfig.test.json" },
     { "path": "./packages/lib/tsconfig.test.json" },
+    { "path": "./packages/lib-node/tsconfig.test.json" },
+    { "path": "./packages/lib-solid/tsconfig.test.json" },
     { "path": "./packages/web-solid/tsconfig.test.json" }
   ]
 }

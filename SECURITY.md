@@ -16,10 +16,10 @@
 
 If you discover a security vulnerability within this project, please report
 it by issuing a
-[pull request with a fix](https://github.com/kurone-kito/pnpm-workspace-template/pulls)
+[pull request with a fix](https://github.com/kurone-kito/web-toybox/pulls)
 or
-[opening an issue](https://github.com/kurone-kito/pnpm-workspace-template/issues)
-with the “security” label.
+[opening an issue](https://github.com/kurone-kito/web-toybox/issues) with
+the “security” label.
 
 Your contributions to improving the security of this project are greatly
 appreciated.

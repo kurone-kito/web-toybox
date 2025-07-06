@@ -10,10 +10,10 @@ export const Head: Component = () => (
   <InnerHead
     author="Kuroné Kito"
     authorUrl="https://kit.black/"
-    description="A webapp template of the pnpm workspaces using SolidStart."
-    keywords="pnpm, pnpm-workspace, template, webapp, solid-start"
+    description="A webapp demo of the web-toybox."
+    keywords="demo,solid-start"
     language="en"
-    siteName="pnpm-workspace-template"
-    url="https://kurone-kito.github.io/pnpm-workspace-template/"
+    siteName="web-toybox"
+    url="https://kurone-kito.github.io/web-toybox/"
   />
 );

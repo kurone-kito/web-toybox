@@ -1,9 +1,11 @@
 {
-  "name": "@kurone-kito/web-toybox",
+  "name": "@kurone-kito/web-toybox-solid",
   "version": "0.1.0",
-  "description": "Common functions library for general applications",
+  "description": "Common functions and component library for Solid.js web applications",
   "keywords": [
+    "components",
     "library",
+    "solid-js",
     "web-toybox"
   ],
   "homepage": "https://github.com/kurone-kito/web-toybox#readme",
@@ -11,7 +13,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/kurone-kito/web-toybox.git",
-    "directory": "packages/lib"
+    "directory": "packages/lib-solid"
   },
   "license": "MIT",
   "author": "kurone-kito <krone@kit.black> (https://kit.black/)",
@@ -30,6 +32,9 @@
     "test": "pnpm run \"/test:.+/\"",
     "test:ts": "tsc -p tsconfig.test.json --noEmit",
     "test:vitest": "vitest run --coverage"
+  },
+  "dependencies": {
+    "@kurone-kito/web-toybox": "workspace:^"
   },
   "devDependencies": {
     "@kurone-kito/typescript-config": "^0.22.0-alpha.4",

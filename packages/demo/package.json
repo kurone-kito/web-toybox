@@ -1,20 +1,20 @@
 {
-  "name": "@kurone-kito/pwt-web-solid",
+  "name": "@kurone-kito/web-toybox-demo",
   "version": "0.1.0",
   "private": true,
   "description": "The SolidJS web app boilerplate",
   "keywords": [
-    "web",
-    "solid.js",
-    "boilerplate",
-    "template"
+    "demo",
+    "solid-js",
+    "web-toybox",
+    "website"
   ],
-  "homepage": "https://github.com/kurone-kito/pnpm-workspace-template#readme",
-  "bugs": "https://github.com/kurone-kito/pnpm-workspace-template/issues",
+  "homepage": "https://github.com/kurone-kito/web-toybox#readme",
+  "bugs": "https://github.com/kurone-kito/web-toybox/issues",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kurone-kito/pnpm-workspace-template.git",
-    "directory": "packages/web-solid"
+    "url": "https://github.com/kurone-kito/web-toybox.git",
+    "directory": "packages/demo"
   },
   "license": "MIT",
   "author": "kurone-kito <krone@kit.black> (https://kit.black/)",
@@ -36,7 +36,8 @@
     "test:vitest": "vitest run --coverage"
   },
   "dependencies": {
-    "@kurone-kito/pwt-lib": "workspace:^",
+    "@kurone-kito/web-toybox": "workspace:^",
+    "@kurone-kito/web-toybox-solid": "workspace:^",
     "@solidjs/meta": "^0.29.4",
     "@solidjs/router": "^0.15.4",
     "@solidjs/start": "^1.2.1",
@@ -45,7 +46,6 @@
   "devDependencies": {
     "@kurone-kito/typescript-config": "^0.22.0-alpha.4",
     "@kurone-kito/vite-lib-config": "^0.22.0-alpha.4",
-    "@kurone-kito/vrc-icons-tw": "^0.15.0",
     "@playwright/test": "^1.58.0",
     "@solidjs/testing-library": "^0.8.10",
     "@tailwindcss/vite": "^4.1.18",

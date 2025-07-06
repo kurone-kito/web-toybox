@@ -1,4 +1,4 @@
-import helloWorld from '@kurone-kito/pwt-lib';
+import helloWorld from '@kurone-kito/web-toybox';
 import type { RouteSectionProps } from '@solidjs/router';
 import type { Component } from 'solid-js';
 

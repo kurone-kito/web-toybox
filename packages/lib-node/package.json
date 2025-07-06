@@ -1,8 +1,9 @@
 {
-  "name": "@kurone-kito/web-toybox",
+  "name": "@kurone-kito/web-toybox-node",
   "version": "0.1.0",
-  "description": "Common functions library for general applications",
+  "description": "Common functions library for node.js applications",
   "keywords": [
+    "cli",
     "library",
     "web-toybox"
   ],
@@ -31,18 +32,20 @@
     "test:ts": "tsc -p tsconfig.test.json --noEmit",
     "test:vitest": "vitest run --coverage"
   },
+  "dependencies": {
+    "@kurone-kito/web-toybox": "workspace:^"
+  },
   "devDependencies": {
-    "@kurone-kito/typescript-config": "^0.22.0-alpha.4",
-    "@kurone-kito/vite-lib-config": "^0.22.0-alpha.4",
-    "@vitest/coverage-v8": "^4.0.18",
+    "@kurone-kito/typescript-config": "^0.21.0",
+    "@kurone-kito/vite-lib-config": "^0.21.0",
+    "@vitest/coverage-v8": "^4.0.15",
     "cpy-cli": "^6.0.0",
-    "rimraf": "^6.1.2",
     "typescript": "~5.9.3",
-    "vite": "^7.3.1",
-    "vitest": "^4.0.18"
+    "vite": "^7.0.2",
+    "vitest": "^4.0.15"
   },
   "engines": {
-    "node": "^20.18 || ^22 || >=24"
+    "node": "^20.11 || ^22 || >=24"
   },
   "publishConfig": {
     "access": "public"

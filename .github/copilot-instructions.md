@@ -1,6 +1,8 @@
 # Guidelines for AI Agents
 
-This project is a generic Node.js workspace template using pnpm.
+This project is a common functions library and demo applications built with
+Solid.js, organized as a monorepo using pnpm workspaces. When contributing
+to this project, please adhere to the following guidelines:
 
 - Please write comments in English.
 - Use the `pnpm run lint:fix` command to ensure code style quality.
@@ -11,12 +13,13 @@ This project is a generic Node.js workspace template using pnpm.
 
 ## Packages
 
-| path                  | package name                           | description                                        |
-| --------------------- | -------------------------------------- | -------------------------------------------------- |
-| `/`                   | `@kurone-kito/pnpm-workspace-template` | Manage the monorepo workspace and linting.         |
-| `/packages/cli`       | `@kurone-kito/pwt-cli`                 | A boilerplate for CLI applications.                |
-| `/packages/lib`       | `@kurone-kito/pwt-lib`                 | A boilerplate for libraries.                       |
-| `/packages/web-solid` | `@kurone-kito/pwt-web-solid`           | A boilerplate for web applications using Solid.js. |
+| path                  | package name                        | description                                          |
+| --------------------- | ----------------------------------- | ---------------------------------------------------- |
+| `/`                   | `@kurone-kito/web-toybox-root`      | Manage the monorepo workspace and linting.           |
+| `/packages/demo`      | `@kurone-kito/web-toybox-demo`      | A demo applications for Solid.js.                    |
+| `/packages/lib`       | `@kurone-kito/web-toybox`           | Utils functions library for general apps.            |
+| `/packages/lib-node`  | `@kurone-kito/web-toybox-lib-node`  | Utils functions library for Node.js apps.            |
+| `/packages/lib-solid` | `@kurone-kito/web-toybox-lib-solid` | Utils functions and components library for Solid.js. |
 
 ## Development
 
@@ -36,7 +39,7 @@ pnpm run build
 pnpm run dev
 
 # to build a specific package
-pnpm -F '@kurone-kito/pwt-lib' run build
+pnpm -F '@kurone-kito/web-toybox' run build
 ```
 
 ### Linting

@@ -40,7 +40,7 @@ jobs:
         name: Check the whether the current version is not prerelease
         run: pnpm run is:release
       - env:
-          BASE_PATH: /pnpm-workspace-template
+          BASE_PATH: /web-toybox
         name: Build the project explicitly. The workaround is provisional because the publish command does not perform topological sorting.
         run: pnpm run build
       - env:
@@ -97,7 +97,7 @@ jobs:
         name: Install the dependencies
         run: pnpm install --frozen-lockfile --prefer-offline
       - env:
-          BASE_PATH: /pnpm-workspace-template
+          BASE_PATH: /web-toybox
         name: Build the project explicitly. The workaround is provisional because the publish command does not perform topological sorting.
         run: pnpm run build
       - name: pack the packages
