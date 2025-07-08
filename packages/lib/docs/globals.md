@@ -4,6 +4,7 @@
 
 # @kurone-kito/web-toybox
 
-## Variables
+## Type Aliases
 
-- [default](variables/default.md)
+- [ReadonlyRecord](type-aliases/ReadonlyRecord.md)
+- [RecordKey](type-aliases/RecordKey.md)

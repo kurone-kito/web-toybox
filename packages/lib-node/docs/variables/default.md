@@ -6,4 +6,4 @@
 
 # Variable: default
 
-> `const` **default**: `"Hello, world!"`
+> **default**: `"Hello, world!"`

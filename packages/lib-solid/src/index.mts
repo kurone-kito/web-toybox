@@ -1,1 +1,1 @@
-export { default } from '@kurone-kito/web-toybox';
+export default 'Hello, world!';
