@@ -25,3 +25,4 @@
 
 - [isVariableLengthTuple](functions/isVariableLengthTuple.md)
 - [toArray](functions/toArray.md)
+- [wait](functions/wait.md)
