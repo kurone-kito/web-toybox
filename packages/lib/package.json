@@ -34,6 +34,9 @@
     "test:ts": "tsc -p tsconfig.test.json --noEmit",
     "test:vitest": "vitest run --coverage"
   },
+  "dependencies": {
+    "type-fest": "^5.4.1"
+  },
   "devDependencies": {
     "@kurone-kito/typescript-config": "^0.22.0-alpha.4",
     "@kurone-kito/vite-lib-config": "^0.22.0-alpha.4",

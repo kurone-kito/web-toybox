@@ -13,3 +13,8 @@
 - [Predicate](type-aliases/Predicate.md)
 - [ReadonlyRecord](type-aliases/ReadonlyRecord.md)
 - [RecordKey](type-aliases/RecordKey.md)
+- [VariableLengthTuple](type-aliases/VariableLengthTuple.md)
+
+## Functions
+
+- [isVariableLengthTuple](functions/isVariableLengthTuple.md)
