@@ -2,7 +2,8 @@
   "compilerOptions": {
     "lib": ["DOM", "ES2023", "ESNext.Disposable"],
     "noEmit": true,
-    "rootDir": "src"
+    "rootDir": "src",
+    "types": ["node"]
   },
   "include": ["src/**/*"],
   "exclude": ["coverage", "dist", "node_modules"],

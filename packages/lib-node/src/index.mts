@@ -1,1 +1,1 @@
-export default 'Hello, world!';
+export { detectImportWithError, isImport } from './process/isImport.mjs';

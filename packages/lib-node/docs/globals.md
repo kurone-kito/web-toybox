@@ -4,6 +4,7 @@
 
 # @kurone-kito/web-toybox-node
 
-## Variables
+## Functions
 
-- [default](variables/default.md)
+- [detectImportWithError](functions/detectImportWithError.md)
+- [isImport](functions/isImport.md)

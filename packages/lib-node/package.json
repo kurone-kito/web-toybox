@@ -41,6 +41,7 @@
   "devDependencies": {
     "@kurone-kito/typescript-config": "^0.21.0",
     "@kurone-kito/vite-lib-config": "^0.21.0",
+    "@types/node": "^25.0.10",
     "@vitest/coverage-v8": "^4.0.15",
     "cpy-cli": "^6.0.0",
     "typedoc": "^0.28.16",
