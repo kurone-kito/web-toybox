@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "jsx": "preserve",
+    "jsxImportSource": "solid-js",
     "lib": ["DOM", "ES2023", "ESNext.Disposable"],
     "noEmit": true,
     "rootDir": "src"
