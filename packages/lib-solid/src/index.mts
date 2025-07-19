@@ -12,3 +12,6 @@ export type { TitleProps } from './components/atoms/meta/Title.js';
 export { Title } from './components/atoms/meta/Title.js';
 export type { XCardProps } from './components/atoms/meta/XCard.js';
 export { XCard } from './components/atoms/meta/XCard.js';
+
+export type { HeadProps } from './components/molecules/Head.js';
+export { Head } from './components/molecules/Head.js';

@@ -1,5 +1,5 @@
+import { Head as InnerHead } from '@kurone-kito/web-toybox-solid';
 import type { Component } from 'solid-js';
-import { Head as InnerHead } from '../molecules/Head.js';
 
 /**
  * The head metadata component.

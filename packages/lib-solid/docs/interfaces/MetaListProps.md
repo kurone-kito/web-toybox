@@ -8,6 +8,10 @@
 
 Type definition for the properties.
 
+## Extended by
+
+- [`HeadProps`](HeadProps.md)
+
 ## Properties
 
 ### author?

@@ -6,6 +6,7 @@
 
 ## Interfaces
 
+- [HeadProps](interfaces/HeadProps.md)
 - [LinkListProps](interfaces/LinkListProps.md)
 - [MetaListProps](interfaces/MetaListProps.md)
 - [OgpProps](interfaces/OgpProps.md)
@@ -18,6 +19,7 @@
 
 ## Variables
 
+- [Head](variables/Head.md)
 - [LinkList](variables/LinkList.md)
 - [MetaList](variables/MetaList.md)
 - [MetaProvider](variables/MetaProvider.md)
