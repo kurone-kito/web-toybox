@@ -1,6 +1,6 @@
 {
   "name": "@kurone-kito/web-toybox",
-  "version": "0.1.0",
+  "version": "0.1.0-alpha.11",
   "description": "Common functions library for general applications",
   "keywords": [
     "library",

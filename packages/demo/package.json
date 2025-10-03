@@ -1,6 +1,6 @@
 {
   "name": "@kurone-kito/web-toybox-demo",
-  "version": "0.1.0",
+  "version": "0.1.0-alpha.11",
   "private": true,
   "description": "The SolidJS web app boilerplate",
   "keywords": [
