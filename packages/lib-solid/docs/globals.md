@@ -15,6 +15,7 @@
 
 ## Type Aliases
 
+- [AccessorObject](type-aliases/AccessorObject.md)
 - [Robots](type-aliases/Robots.md)
 
 ## Variables
