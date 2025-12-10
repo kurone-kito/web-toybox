@@ -1,16 +1,20 @@
+import type {
+  LinkListProps,
+  MetaListProps,
+  OgpProps,
+  TitleProps,
+  XCardProps,
+} from '@kurone-kito/web-toybox-solid';
+import {
+  LinkList,
+  MetaList,
+  Ogp,
+  Title,
+  XCard,
+} from '@kurone-kito/web-toybox-solid';
 import type { Component } from 'solid-js';
 import { Show, splitProps } from 'solid-js';
 import type { Except } from 'type-fest';
-import type { LinkListProps } from '../atoms/meta/LinkList.js';
-import { LinkList } from '../atoms/meta/LinkList.js';
-import type { MetaListProps } from '../atoms/meta/MetaList.js';
-import { MetaList } from '../atoms/meta/MetaList.js';
-import type { OgpProps } from '../atoms/meta/Ogp.js';
-import { Ogp } from '../atoms/meta/Ogp.js';
-import type { TitleProps } from '../atoms/meta/Title.js';
-import { Title } from '../atoms/meta/Title.js';
-import type { XCardProps } from '../atoms/meta/XCard.js';
-import { XCard } from '../atoms/meta/XCard.js';
 
 /** Type definition for the properties. */
 export interface HeadProps

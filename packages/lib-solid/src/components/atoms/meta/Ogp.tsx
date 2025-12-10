@@ -39,6 +39,21 @@ export interface OgpProps {
  * The OGP component.
  * @param props The component properties.
  * @returns The component.
+ * @example
+ * ```tsx
+ * <Ogp
+ *   description="This is a sample page."
+ *   images={['https://example.com/image1.png', 'https://example.com/image2.png']}
+ *   imageAlt="Sample Image"
+ *   imageHeight={630}
+ *   imageType="image/png"
+ *   imageWidth={1200}
+ *   language="en_US"
+ *   siteName="Example Site"
+ *   title="Sample Page"
+ *   url="https://example.com/sample-page"
+ * />
+ * ```
  */
 export const Ogp: Component<OgpProps> = (props) => (
   <>

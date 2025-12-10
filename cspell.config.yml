@@ -3,6 +3,8 @@ cache:
   cacheLocation: node_modules/.cache/cspell/.cspell.cache
   cacheStrategy: metadata
   useCache: true
+dictionaries:
+  - python-common
 import:
   - '@kurone-kito/cspell-config'
 version: '0.2'

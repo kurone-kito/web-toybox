@@ -18,12 +18,41 @@ export interface MetaListProps {
 
   /** The keywords of the meta tag. */
   readonly keywords?: string | undefined;
+
+  readonly robots?: readonly Robots[] | undefined;
 }
+
+export type Robots =
+  | 'all'
+  | 'follow'
+  | 'index'
+  | 'indexifembedded'
+  | `max-image-preview: ${'large' | 'none' | 'standard'}`
+  | `max-snippet: ${number}`
+  | `max-video-preview: ${number}`
+  | 'noarchive'
+  | 'nofollow'
+  | 'noimageindex'
+  | 'noindex'
+  | 'none'
+  | 'nosnippet'
+  | 'notranslate'
+  | `unavailable_after: ${string}`;
 
 /**
  * The meta list component.
  * @param props The component properties.
  * @returns The component.
+ * @example
+ * ```tsx
+ * <MetaList
+ *   author="John Doe"
+ *   colorDark="#000000"
+ *   colorLight="#FFFFFF"
+ *   description="This is a sample description."
+ *   keywords="sample, meta, tags"
+ * />
+ * ```
  */
 export const MetaList: Component<MetaListProps> = (props) => (
   <>
@@ -49,6 +78,9 @@ export const MetaList: Component<MetaListProps> = (props) => (
       <Meta name="keywords" content={props.keywords} />
     </Show>
     <Meta name="referer" content="strict-origin-when-cross-origin" />
+    <Show when={props.robots?.length}>
+      <Meta name="robots" content={props.robots?.join(', ')} />
+    </Show>
     <Show when={props.colorLight}>
       <Meta
         name="theme-color"

@@ -1,9 +1,7 @@
 import { vitestConfig } from '@kurone-kito/vite-lib-config';
 import solidPlugin from 'vite-plugin-solid';
-import viteConfig from './vite.config.mjs';
 
 export default vitestConfig({
-  ...viteConfig,
   plugins: [
     solidPlugin({
       hot: false,
@@ -12,4 +10,5 @@ export default vitestConfig({
     }),
   ],
   test: { environment: 'jsdom', include: ['src/**/*.spec.{ts,tsx,mts}'] },
+  ssr: { noExternal: ['@solidjs/meta'] },
 });

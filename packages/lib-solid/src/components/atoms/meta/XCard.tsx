@@ -21,9 +21,19 @@ export interface XCardProps {
 }
 
 /**
- * The X card component.
+ * The 𝕏 card component.
  * @param props The component properties.
  * @returns The component.
+ * @example
+ * ```tsx
+ * <XCard
+ *   author="Jane Doe"
+ *   description="This is a sample description."
+ *   image="https://example.com/image.png"
+ *   siteName="Example Site"
+ *   title="Sample Page"
+ * />
+ * ```
  */
 export const XCard: Component<XCardProps> = (props) => (
   <>

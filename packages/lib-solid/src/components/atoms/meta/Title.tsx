@@ -15,6 +15,10 @@ export interface TitleProps {
  * The title component.
  * @param props The component properties.
  * @returns The component.
+ * @example
+ * ```tsx
+ * <Title siteName="Example Site" title="Sample Page" />
+ * ```
  */
 export const Title: Component<TitleProps> = (props) => (
   <SolidTitle>

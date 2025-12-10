@@ -1,4 +1,3 @@
-import helloWorld from '@kurone-kito/web-toybox-solid';
 import type { RouteSectionProps } from '@solidjs/router';
 import type { Component } from 'solid-js';
 
@@ -9,7 +8,7 @@ import type { Component } from 'solid-js';
 const Index: Component<Partial<RouteSectionProps>> = () => (
   <article class="flex gap-2 items-center">
     <i class="vrc-icon-Document" />
-    <h1>{helloWorld}</h1>
+    <h1>Hello, world!</h1>
   </article>
 );
 
