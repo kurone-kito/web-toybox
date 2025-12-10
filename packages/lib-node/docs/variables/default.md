@@ -1,0 +1,9 @@
+[**@kurone-kito/web-toybox-node**](../README.md)
+
+***
+
+[@kurone-kito/web-toybox-node](../globals.md) / default
+
+# Variable: default
+
+> `const` **default**: `"Hello, world!"`
