@@ -15,6 +15,10 @@
 - [RecordKey](type-aliases/RecordKey.md)
 - [VariableLengthTuple](type-aliases/VariableLengthTuple.md)
 
+## Variables
+
+- [randomPick](variables/randomPick.md)
+
 ## Functions
 
 - [isVariableLengthTuple](functions/isVariableLengthTuple.md)

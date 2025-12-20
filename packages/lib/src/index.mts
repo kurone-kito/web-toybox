@@ -1,3 +1,4 @@
+export { randomPick } from './list/randomPick.mjs';
 export type { VariableLengthTuple } from './list/variableLengthTuple.mjs';
 export { isVariableLengthTuple } from './list/variableLengthTuple.mjs';
 
