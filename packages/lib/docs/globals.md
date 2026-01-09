@@ -24,3 +24,4 @@
 ## Functions
 
 - [isVariableLengthTuple](functions/isVariableLengthTuple.md)
+- [toArray](functions/toArray.md)

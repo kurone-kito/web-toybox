@@ -1,6 +1,7 @@
 export type { IsArray } from './list/isArray.mjs';
 export { isArray } from './list/isArray.mjs';
 export { randomPick } from './list/randomPick.mjs';
+export { toArray } from './list/toArray.mjs';
 export type { VariableLengthTuple } from './list/variableLengthTuple.mjs';
 export { isVariableLengthTuple } from './list/variableLengthTuple.mjs';
 
