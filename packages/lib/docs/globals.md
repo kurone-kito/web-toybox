@@ -8,6 +8,7 @@
 
 - [Func](type-aliases/Func.md)
 - [Getter](type-aliases/Getter.md)
+- [IsArray](type-aliases/IsArray.md)
 - [Mapper](type-aliases/Mapper.md)
 - [OptionalFunc](type-aliases/OptionalFunc.md)
 - [Predicate](type-aliases/Predicate.md)
@@ -17,6 +18,7 @@
 
 ## Variables
 
+- [isArray](variables/isArray.md)
 - [randomPick](variables/randomPick.md)
 
 ## Functions
