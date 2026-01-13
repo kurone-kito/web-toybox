@@ -6,6 +6,7 @@
 
 ## Interfaces
 
+- [CreateTickParams](interfaces/CreateTickParams.md)
 - [HeadProps](interfaces/HeadProps.md)
 - [LinkListProps](interfaces/LinkListProps.md)
 - [MetaListProps](interfaces/MetaListProps.md)
@@ -27,3 +28,7 @@
 - [Ogp](variables/Ogp.md)
 - [Title](variables/Title.md)
 - [XCard](variables/XCard.md)
+
+## Functions
+
+- [createTick](functions/createTick.md)

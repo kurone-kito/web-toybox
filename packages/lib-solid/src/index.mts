@@ -16,4 +16,7 @@ export { XCard } from './components/atoms/meta/XCard.js';
 export type { HeadProps } from './components/molecules/Head.js';
 export { Head } from './components/molecules/Head.js';
 
+export type { CreateTickParams } from './modules/createTick.mjs';
+export { createTick } from './modules/createTick.mjs';
+
 export type { AccessorObject } from './types/AccessorObject.mjs';
