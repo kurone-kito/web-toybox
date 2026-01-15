@@ -6,6 +6,7 @@
 
 ## Interfaces
 
+- [CreateAsyncDisposableParams](interfaces/CreateAsyncDisposableParams.md)
 - [CreateDisposableParams](interfaces/CreateDisposableParams.md)
 
 ## Type Aliases
@@ -27,6 +28,7 @@
 
 ## Functions
 
+- [createAsyncDisposable](functions/createAsyncDisposable.md)
 - [createDisposable](functions/createDisposable.md)
 - [isVariableLengthTuple](functions/isVariableLengthTuple.md)
 - [toArray](functions/toArray.md)

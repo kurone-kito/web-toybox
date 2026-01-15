@@ -7,6 +7,8 @@ export { toArray } from './list/toArray.mjs';
 export type { VariableLengthTuple } from './list/variableLengthTuple.mjs';
 export { isVariableLengthTuple } from './list/variableLengthTuple.mjs';
 
+export type { CreateAsyncDisposableParams } from './resource/createAsyncDisposable.mjs';
+export { createAsyncDisposable } from './resource/createAsyncDisposable.mjs';
 export type { CreateDisposableParams } from './resource/createDisposable.mjs';
 export { createDisposable } from './resource/createDisposable.mjs';
 
