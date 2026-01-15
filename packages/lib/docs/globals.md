@@ -4,6 +4,10 @@
 
 # @kurone-kito/web-toybox
 
+## Interfaces
+
+- [CreateDisposableParams](interfaces/CreateDisposableParams.md)
+
 ## Type Aliases
 
 - [Func](type-aliases/Func.md)
@@ -23,6 +27,7 @@
 
 ## Functions
 
+- [createDisposable](functions/createDisposable.md)
 - [isVariableLengthTuple](functions/isVariableLengthTuple.md)
 - [toArray](functions/toArray.md)
 - [wait](functions/wait.md)
