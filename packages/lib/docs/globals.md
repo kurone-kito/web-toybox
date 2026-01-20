@@ -28,6 +28,7 @@
 
 ## Functions
 
+- [chunkAsync](functions/chunkAsync.md)
 - [createAsyncDisposable](functions/createAsyncDisposable.md)
 - [createDisposable](functions/createDisposable.md)
 - [isVariableLengthTuple](functions/isVariableLengthTuple.md)

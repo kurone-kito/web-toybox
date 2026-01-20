@@ -1,5 +1,6 @@
 export { wait } from './async/wait.mjs';
 
+export { chunkAsync } from './list/chunkAsync.mjs';
 export type { IsArray } from './list/isArray.mjs';
 export { isArray } from './list/isArray.mjs';
 export { randomPick } from './list/randomPick.mjs';
