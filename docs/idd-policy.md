@@ -31,7 +31,9 @@ claim, freshness, CI, advisory, and review gates pass.
 
 ## PR Review Policy
 
-**Profile**: `copilot-advisory`
+**Profile**: `copilot-advisory` — this repository keeps the distributed
+Copilot advisory review profile: GitHub Copilot reviews every pull
+request, and its findings are advisory rather than merge-blocking.
 
 **Advisory bot logins**: `copilot-pull-request-reviewer[bot]`,
 `coderabbitai[bot]`
