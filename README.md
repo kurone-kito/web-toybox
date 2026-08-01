@@ -36,11 +36,15 @@ corepack enable
 pnpm install
 ```
 
+Node.js 25 and later no longer bundle Corepack; install it as a userland
+package first (`npm install -g corepack@latest`) before running
+`corepack enable`.
+
 ### Linting
 
 ```sh
-pnpm run lint
 pnpm run lint:fix # Lint and auto-fix
+pnpm run lint # Verify
 ```
 
 ### Testing
