@@ -6,3 +6,31 @@ cache:
 import:
   - '@kurone-kito/cspell-config'
 version: '0.2'
+# Terms introduced by the vendored IDD docs/instructions imported from
+# github:kurone-kito/idd-skill (issue #30) — kept here rather than
+# editing the vendored files or the shared cspell config package.
+words:
+  - dedup
+  - deprioritize
+  - desync
+  - Desync
+  - desynced
+  - Desynced
+  - Esync
+  - isort
+  - ONNX
+  - pylint
+  - pyproject
+  - pytest
+  - qwen
+  - TOCTOU
+  - undispositioned
+  - unioned
+  - unpushed
+  - Unpushed
+  - unreplied
+  - Unreplied
+  - unscored
+  - unwaived
+  - Unwaived
+  - waivable

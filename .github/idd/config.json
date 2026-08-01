@@ -1,0 +1,41 @@
+{
+  "$schema": "https://kurone-kito.github.io/idd-skill/schemas/policy.schema.json",
+  "iddVersion": "0.4.0",
+  "markerPrefix": "web-toybox",
+  "mergePolicy": "fully_autonomous_merge",
+  "reviewPolicy": "copilot-advisory",
+  "threadResolutionPolicy": "fast-agent-resolve",
+  "claimTiming": {
+    "staleAge": "PT24H",
+    "heartbeatInterval": "PT12H"
+  },
+  "trustedMarkerActors": ["kurone-kito"],
+  "advisoryBotLogins": [
+    "copilot-pull-request-reviewer[bot]",
+    "coderabbitai[bot]"
+  ],
+  "maintainerApprovalActorPolicy": "owners-and-maintainers-only",
+  "workshop": {
+    "exampleRepository": ""
+  },
+  "commands": {
+    "install-deps": "corepack enable && pnpm install --prefer-frozen-lockfile",
+    "fix-validate": "pnpm run lint:fix && pnpm run lint",
+    "pre-push-validate": "pnpm run lint && pnpm run test",
+    "post-fix-validate": "pnpm run lint:fix && pnpm run lint && pnpm run test"
+  },
+  "helperRuntime": {
+    "profile": "package-manager"
+  },
+  "issueScope": "roadmap-first",
+  "orphanFirstPolicy": "none",
+  "advisoryWait": {
+    "convergenceScope": "all-prs"
+  },
+  "autopilotSuitability": {
+    "floor": 3
+  },
+  "worktreeGuard": {
+    "enabled": true
+  }
+}
