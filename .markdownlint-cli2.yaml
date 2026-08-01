@@ -2,3 +2,16 @@ ignores:
   - '**/node_modules/**/*'
   - .github/CODE_OF_CONDUCT*
   - node_modules/**/*
+  # Vendored from github:kurone-kito/idd-skill (IDD template import, issue
+  # #30) — kept byte-identical to upstream apart from onboarding
+  # placeholder substitution, so it is not reformatted to this
+  # repository's markdownlint rules.
+  - docs/idd-*.md
+  - docs/onboarding/**/*
+  - docs/getting-started.md
+  - docs/concepts.md
+  - docs/customization.md
+  - docs/permissions.md
+  - docs/policy-constants.md
+  - docs/reference.md
+  - profiles/**/*
