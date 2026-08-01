@@ -348,3 +348,19 @@ in a single plan:
 Present these items as a checklist proposal (e.g., in Plan mode for
 Copilot, or as a numbered list for other agents). Let the user
 select which items to tackle and in what order.
+
+## IDD Workflow
+
+This project uses Issue-Driven Development (IDD) with parallel AI
+agents. Start with [docs/idd-workflow.md](../docs/idd-workflow.md) for
+the cross-agent entry path and phase routing, and
+[docs/idd-policy.md](../docs/idd-policy.md) for this repository's
+recorded policy decisions (merge policy, review policy, helper runtime,
+and so on).
+
+Before starting IDD work, open
+[`.github/instructions/idd-overview-core.instructions.md`](instructions/idd-overview-core.instructions.md)
+manually. Open the routed phase file manually when the current step
+changes. That file's `excludeAgent: "code-review"` frontmatter keeps it
+out of GitHub Copilot's automatic code-review context — the rest of
+this repository-wide Copilot guidance still applies during review.
