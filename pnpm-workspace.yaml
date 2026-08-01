@@ -7,5 +7,6 @@ ignoreWorkspaceRootCheck: true
 linkWorkspacePackages: true
 allowBuilds:
   '@biomejs/biome': true
+  '@kurone-kito/idd-skill@https://codeload.github.com/kurone-kito/idd-skill/tar.gz/f1f19d5cac8f270b01043fc9a161e48b6df80238': true
 pmOnFail: warn
 shellEmulator: true
