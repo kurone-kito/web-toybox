@@ -71,11 +71,12 @@ session holds both worker and merge-capable credentials
 
 The IDD helper bundle resolves through this repository's own package
 manager rather than ad hoc `npx` calls or a vendored copy of upstream
-`scripts/`. The concrete dependency spec is wired by the helper-runtime
-track (roadmap issue
-[#32](https://github.com/kurone-kito/web-toybox/issues/32)); until that
-merges, every "when helper runtime is enabled" instruction branch falls
-through to its manual/fallback path.
+`scripts/`. The helper-runtime track (roadmap issue
+[#32](https://github.com/kurone-kito/web-toybox/issues/32)) wired the
+dependency, so every "when helper runtime is enabled" instruction
+branch is live. `package.json`'s `devDependencies` is the authority
+for the pinned spec — do not duplicate it here. Invoke helpers as
+`pnpm exec <idd-helper>`, for example `pnpm exec idd-doctor`.
 
 ## Issue-Author Approval Gate
 
