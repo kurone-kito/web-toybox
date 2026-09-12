@@ -34,8 +34,9 @@ installed package (`audit/sync-manifest.json`'s
 repository-owned and were never wholesale-overwritten.
 
 **Runtime floor**: Node `^22.23.2 || ^24.2.0 || >=26.0.0`, pnpm
-`12.4.0` (Corepack-pinned `packageManager`) — raised to match the
-`v0.11.0` helper release's own floor.
+`^12.4.0` (both declared in `package.json`'s `engines`, plus a
+Corepack-pinned `packageManager`) — raised to match the `v0.11.0`
+helper release's own floor.
 
 ## Marker Prefix
 
