@@ -7,8 +7,9 @@ import:
   - '@kurone-kito/cspell-config'
 version: '0.2'
 # Terms introduced by the vendored IDD docs/instructions imported from
-# github:kurone-kito/idd-skill (issue #30) — kept here rather than
-# editing the vendored files or the shared cspell config package.
+# github:kurone-kito/idd-skill (issue #30, resync to v0.11.0 in issue
+# #48) — kept here rather than editing the vendored files or the
+# shared cspell config package.
 words:
   - dedup
   - deprioritize
@@ -16,13 +17,18 @@ words:
   - Desync
   - desynced
   - Desynced
+  - dofork
   - Esync
+  - GHEC
+  - GHES
   - isort
+  - nektos
   - ONNX
   - pylint
   - pyproject
   - pytest
   - qwen
+  - remediations
   - TOCTOU
   - undispositioned
   - unioned
@@ -33,4 +39,5 @@ words:
   - unscored
   - unwaived
   - Unwaived
+  - vrchat
   - waivable
