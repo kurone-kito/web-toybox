@@ -7,6 +7,7 @@ ignores:
   # placeholder substitution, so it is not reformatted to this
   # repository's markdownlint rules.
   - docs/idd-*.md
+  - docs/index.md
   - docs/onboarding/**/*
   - docs/getting-started.md
   - docs/concepts.md

@@ -18,17 +18,15 @@ standard review-snapshot instructions instead.
 
 ## Triage hand-off boundary (E4-E8 excluded)
 
-This file only fetches, freezes, and routes ReviewItems_snapshot. It
-never classifies findings, scores severity, or decides Accept/Reject —
-those are E4-E8 judgment calls, excluded from every lite profile, the
-same boundary `idd-review-fix-lite.instructions.md` states on its own
-downstream side (it only executes dispositions an E4-E8 pass already
-made).
+This file only fetches, freezes, and routes ReviewItems_snapshot — it
+never classifies findings, scores severity, or decides Accept/Reject;
+those are excluded E4-E8 judgment calls, the same boundary
+`idd-review-fix-lite.instructions.md` states on its downstream side.
 
 1. E3's non-empty-list outcome hands off to
-   `idd-review-triage.instructions.md` (E4-E8). A stronger session or a
-   human runs that pass — this lite file never runs E4-E8 itself, even
-   when a finding looks trivial to classify.
+   `idd-review-triage.instructions.md` (E4-E8) for a stronger session
+   or a human — never run E4-E8 yourself, even for a trivial-looking
+   finding.
 2. If you catch yourself judging severity, deciding Accept/Reject, or
    assigning a PATH before handing off to E4, stop and ask instead.
 
@@ -57,7 +55,11 @@ GitHub side effect, confirm all of the following:
    the package-manager-profile `idd:claim-lock` command with the same
    arguments — resolve the exact command from
    `docs/idd-helper-scripts.md` if unsure). A `collision` result is
-   fail-closed: stop rather than proceed.
+   fail-closed: stop rather than proceed. Then, separately, run
+   `--read-tokens --worktree <this-worktree-path> --claim-id <id>`
+   and require `present: true` with no `malformed`; otherwise recover
+   per `docs/idd-helper-scripts.md` (gated: each step succeeds,
+   `reacquired: true` both ends), else stop.
 6. If any check fails, stop.
 
 ## E1 — Fetch review items into ReviewItems_snapshot
@@ -170,9 +172,9 @@ different-claim watermark here.
 
 Do not create or edit the PR live status digest after posting this
 watermark unless the next route is back to E1, an F3 blocked reroute
-that returns to F2's restart path, a hold/stop, or post-merge cleanup —
-a digest edit after the watermark counts as new activity and forces a
-fresh E1 snapshot before F2 can pass.
+that leaves the F2 restart path (F1/D4), a hold/stop, or post-merge
+cleanup — a digest edit after the watermark counts as new activity and
+forces a fresh E1 snapshot before F2 can pass.
 
 ### Step 3 — Filter into ReviewItems_snapshot
 
@@ -210,6 +212,15 @@ Run one critique pass on the branch's changes every E1-E3 pass — this is
 a deterministic "always run one" step, not a judgment call whether to
 run it. Add any newly found issues to ReviewItems_snapshot.
 
+Also apply these lenses when they fit, composing when both do:
+**Mutation / write-side** (the diff implements a helper that mutates
+GitHub state, mutates git state, or performs a merge) — Fail-closed
+inputs; Validate/execute scope parity; Unsafe-output suppression;
+Schema strictness parity. **Gate-mirroring** (the diff implements a
+helper that predicts, mirrors, or pre-checks another gate's decision) —
+Validation-path parity; Input completeness; Whole-identity comparison;
+Snapshot identity; Point-in-time parity.
+
 **Incremental scope**: on the second and later passes within the same
 claim, scope the review to the diff since the previous E2's head SHA,
 tracked by the latest trusted same-claim `review-baseline` comment.
@@ -241,10 +252,11 @@ watermark. The same "nothing after the note" rule applies here too.
 
 ## E3 — Empty/non-empty routing
 
-- **ReviewItems_snapshot is empty** → proceed to the E-phase branch-sync
-  check in `idd-review-triage.instructions.md`.
-- **ReviewItems_snapshot is non-empty** → this lite session's job for
-  this PR ends here. Do not classify or disposition any item yourself
-  (see Triage hand-off boundary above); hand off to
+- **ReviewItems_snapshot is empty** → proceed to
+  `idd-pre-merge-lite.instructions.md` (F1), which covers the
+  branch-sync decision. Do not route this case directly to the
+  excluded `idd-review-triage.instructions.md`.
+- **ReviewItems_snapshot is non-empty** → this lite session's job ends
+  here (see Triage hand-off boundary above); hand off to
   `idd-review-triage.instructions.md` (E4) for a stronger session or a
   human to run.

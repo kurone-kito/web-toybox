@@ -14,6 +14,30 @@ entry path and phase routing, and open
 [`.github/instructions/idd-overview-core.instructions.md`](../.github/instructions/idd-overview-core.instructions.md)
 before starting IDD work.
 
+## Vendored Template Version
+
+**`iddVersion`**: `0.11.0` (pinned tag; `main` is deliberately not
+used) — `package.json`'s `@kurone-kito/idd-skill` devDependency uses
+the matching `github:kurone-kito/idd-skill#v0.11.0` spec.
+
+This repository imported the template at `v0.4.0` (roadmap issue
+[#30](https://github.com/kurone-kito/web-toybox/issues/30)) and later
+brought it forward to `v0.11.0` as a **named-gap resync** (roadmap
+issue [#47](https://github.com/kurone-kito/web-toybox/issues/47),
+tracked in [#48](https://github.com/kurone-kito/web-toybox/issues/48)): the
+mechanical `idd-onboard --import`/`--substitute`/`--verify` path
+copied and re-substituted the full vendored core-file list from the
+installed package (`audit/sync-manifest.json`'s
+`idd-template-core-files` block), while this file,
+`.github/idd/config.json` (patched, not replaced), and the
+`@kurone-kito/*-config`-based lint configuration stayed
+repository-owned and were never wholesale-overwritten.
+
+**Runtime floor**: Node `^22.23.2 || ^24.2.0 || >=26.0.0`, pnpm
+`^12.4.0` (both declared in `package.json`'s `engines`, plus a
+Corepack-pinned `packageManager`) — raised to match the `v0.11.0`
+helper release's own floor.
+
 ## Marker Prefix
 
 **Prefix**: `web-toybox`
@@ -28,6 +52,13 @@ example `<!-- web-toybox-roadmap-id: ... -->` and
 
 One trusted agent session may execute merge phase F3 after the normal
 claim, freshness, CI, advisory, and review gates pass.
+
+**`mergePolicyAck`**: `fully_autonomous_merge` — diagnostics-only
+confirmation (added by the `v0.11.0` resync, #48) that the operator
+has explicitly reconsidered this `mergePolicy` value. It never
+participates in F2.5/F3 merge-authority resolution by itself; it only
+silences `idd-doctor`'s warning that fires when `mergePolicy` is
+`fully_autonomous_merge` and this field is absent or mismatched.
 
 ## PR Review Policy
 
@@ -56,6 +87,19 @@ request, and its findings are advisory rather than merge-blocking.
 - **running timeout**: `PT30M` / 30 min (distributed default)
 - **generation timeout**: `PT10M` / 10 min (distributed default)
 - **rerun policy**: `rerun-once` (distributed default)
+
+## CI Gate — Protection-Read Trust
+
+**`ciGate.trustEmptyProtectionReads`**: `true` (added by the `v0.11.0`
+resync, #48). This repository's branch protection is Ruleset-only (no
+classic branch-protection record), so a classic-protection read
+returns a bare `404`. Without this opt-in, `idd-pre-merge-readiness`
+fails closed and treats that `404` as a possibly-masked-403 (unreadable
+protection) rather than as a genuinely-empty result. This flag is a
+human-authorized, git-committed statement that the automation token is
+known to carry full read access to these endpoints — not a runtime
+permission check — and it clears the prior "Ruleset-only, protection
+reads unreadable" `idd-doctor` warning.
 
 ## Credential Scope
 
@@ -143,6 +187,15 @@ run.
 authored suitability score is `>= 3`; lower scores route to a human.
 Advisory ranking/routing hint only — it never bypasses the A4.5/A5
 safety gates.
+
+## Optional Policy Keys — Deliberately Left Unset
+
+Confirmed at the #47 roadmap hearing (2026-09-13) and re-affirmed by
+the #48 resync: `instructionProfile`, `journalIssue`,
+`upstreamEscalation`, and any untrusted-labeler entries stay absent
+from `.github/idd/config.json` — there is no concrete need for any of
+them yet. Add one only alongside the concrete need that justifies it,
+not speculatively.
 
 ## Machine-Readable Policy File
 

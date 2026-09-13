@@ -1,8 +1,9 @@
 {
   "$schema": "https://kurone-kito.github.io/idd-skill/schemas/policy.schema.json",
-  "iddVersion": "0.4.0",
+  "iddVersion": "0.11.0",
   "markerPrefix": "web-toybox",
   "mergePolicy": "fully_autonomous_merge",
+  "mergePolicyAck": "fully_autonomous_merge",
   "reviewPolicy": "copilot-advisory",
   "threadResolutionPolicy": "fast-agent-resolve",
   "claimTiming": {
@@ -37,5 +38,8 @@
   },
   "worktreeGuard": {
     "enabled": true
+  },
+  "ciGate": {
+    "trustEmptyProtectionReads": true
   }
 }
