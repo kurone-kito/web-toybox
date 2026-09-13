@@ -148,6 +148,19 @@ for the pinned spec — do not duplicate it here. Invoke helpers as
   (distributed default)
 - **`issueAuthoring.authoringStaleAge`**: `PT4H` (distributed default)
 
+## idd-spec-audit Companion
+
+**Status**: installed, under
+[`.claude/skills/idd-spec-audit/`](../.claude/skills/idd-spec-audit/)
+
+Read-only semantic audit of the instruction corpus, the issue-authoring
+bundle, and the agent entry files. No repository-configurable options;
+never edits files or mutates issues. Findings are routed through the
+issue-authoring companion above as separate follow-up issues rather
+than fixed inline (see
+[#52](https://github.com/kurone-kito/web-toybox/issues/52) for the
+installation and the first audit run).
+
 ## IDD Label Names
 
 Distributed defaults — no repository override recorded:
