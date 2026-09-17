@@ -28,6 +28,9 @@
   "helperRuntime": {
     "profile": "package-manager"
   },
+  "issueAuthoring": {
+    "journalIssue": "kurone-kito/web-toybox#59"
+  },
   "issueScope": "roadmap-first",
   "orphanFirstPolicy": "none",
   "advisoryWait": {
