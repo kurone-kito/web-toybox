@@ -152,6 +152,11 @@ for the pinned spec — do not duplicate it here. Invoke helpers as
   set (the first standalone set with no pre-existing roadmap anchor).
   Points at a durable, comment-only journal issue (#59) that never
   gets claimed or worked; see its own body for the marker contract.
+  #59 is kept **closed** by design — a comment-only prose rule alone
+  does not stop `idd-discover.instructions.md`'s A0-T/A0-O paths from
+  selecting an open issue, while a closed issue is mechanically
+  excluded from both, and closed issues can still receive new
+  comments (PR #60 review feedback, 2026-09-17).
 
 ## IDD Label Names
 
