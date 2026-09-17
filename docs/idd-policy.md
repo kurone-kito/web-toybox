@@ -147,6 +147,16 @@ for the pinned spec — do not duplicate it here. Invoke helpers as
 - **`issueAuthoring.authoringLabelName`**: `status:authoring`
   (distributed default)
 - **`issueAuthoring.authoringStaleAge`**: `PT4H` (distributed default)
+- **`issueAuthoring.journalIssue`**: `kurone-kito/web-toybox#59` —
+  configured 2026-09-17 for the pnpm-project-template resync authoring
+  set (the first standalone set with no pre-existing roadmap anchor).
+  Points at a durable, comment-only journal issue (#59) that never
+  gets claimed or worked; see its own body for the marker contract.
+  #59 is kept **closed** by design — a comment-only prose rule alone
+  does not stop `idd-discover.instructions.md`'s A0-T/A0-O paths from
+  selecting an open issue, while a closed issue is mechanically
+  excluded from both, and closed issues can still receive new
+  comments (PR #60 review feedback, 2026-09-17).
 
 ## IDD Label Names
 
@@ -191,11 +201,14 @@ safety gates.
 ## Optional Policy Keys — Deliberately Left Unset
 
 Confirmed at the #47 roadmap hearing (2026-09-13) and re-affirmed by
-the #48 resync: `instructionProfile`, `journalIssue`,
-`upstreamEscalation`, and any untrusted-labeler entries stay absent
-from `.github/idd/config.json` — there is no concrete need for any of
-them yet. Add one only alongside the concrete need that justifies it,
-not speculatively.
+the #48 resync: `instructionProfile`, `upstreamEscalation`, and any
+untrusted-labeler entries stay absent from `.github/idd/config.json`
+— there is no concrete need for any of them yet. Add one only
+alongside the concrete need that justifies it, not speculatively.
+`issueAuthoring.journalIssue` was part of this deliberately-unset
+group until 2026-09-17, when the pnpm-project-template resync
+authoring set supplied the first concrete need (see the
+Issue-Authoring Companion section above).
 
 ## Machine-Readable Policy File
 
