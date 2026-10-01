@@ -31,7 +31,7 @@
     "@biomejs/biome": "^2.5.2",
     "@commitlint/cli": "^21.2.0",
     "@commitlint/config-conventional": "^21.2.0",
-    "@cspell/cspell-types": "^10.0.1",
+    "@cspell/cspell-types": "^10.3.5",
     "@kurone-kito/biome-config": "^0.23.0-alpha.1",
     "@kurone-kito/commitlint-config": "^0.23.0-alpha.1",
     "@kurone-kito/cspell-config": "^0.23.0-alpha.1",
