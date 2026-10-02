@@ -184,8 +184,8 @@ importers:
         specifier: ^21.2.0
         version: 21.2.0
       '@cspell/cspell-types':
-        specifier: ^10.0.1
-        version: 10.0.1
+        specifier: ^10.3.5
+        version: 10.3.5
       '@kurone-kito/biome-config':
         specifier: ^0.23.0-alpha.1
         version: 0.23.0-alpha.1(@biomejs/biome@2.5.6)
@@ -402,12 +402,12 @@ packages:
     resolution: {integrity: sha512-Z3BUsVllqyAoJSGXcyFp0hXtBVKEfrxVcSy3UPoSoLW9gZZjXmFwOorhga3+fMseC9VRK3L6mKSccn9YGAjsnA==}
     engines: {node: '>=22.18.0'}
 
-  '@cspell/cspell-types@10.0.1':
-    resolution: {integrity: sha512-kLgLShnWADDVreKC63pBrWkcvxgZzFIfO34Jhx/SWfuOIA3cD8AXT+HjyuLfoGJ7mUb58hv2kUziKzEy4INb1w==}
-    engines: {node: '>=22.18.0'}
-
   '@cspell/cspell-types@10.1.1':
     resolution: {integrity: sha512-lsc+/pazJQ47Zy7qyuFiQRZzco+kBSUmAtCzbmT96pFpAVxR+b4A8qRBoTdiq4OXBRXRT+CqWMNynSiwQJWM6g==}
+    engines: {node: '>=22.18.0'}
+
+  '@cspell/cspell-types@10.3.5':
+    resolution: {integrity: sha512-zNnZVIE3+BfSG7CN5kLNSNo4US8066BCqoebrVksqo+5cn1LGPhgEPvM93wZwJ+LwCJRCuObEW+5BWn8+sqAWw==}
     engines: {node: '>=22.18.0'}
 
   '@cspell/cspell-worker@10.1.1':
@@ -1766,9 +1766,9 @@ snapshots:
 
   '@cspell/cspell-service-bus@10.1.1': {}
 
-  '@cspell/cspell-types@10.0.1': {}
-
   '@cspell/cspell-types@10.1.1': {}
+
+  '@cspell/cspell-types@10.3.5': {}
 
   '@cspell/cspell-worker@10.1.1':
     dependencies:
@@ -2232,7 +2232,6 @@ snapshots:
       '@cspell/cspell-worker': 10.1.1
       '@cspell/dynamic-import': 10.1.1
       '@cspell/url': 10.1.1
-      '@types/semver': 7.8.0
       ansi-regex: 6.3.0
       chalk: 6.0.0
       chalk-template: 1.1.2
