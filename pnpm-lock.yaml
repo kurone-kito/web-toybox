@@ -196,8 +196,8 @@ importers:
         specifier: ^0.23.0-alpha.1
         version: 0.23.0-alpha.1(cspell@10.1.1)
       '@kurone-kito/idd-skill':
-        specifier: github:kurone-kito/idd-skill#v0.11.0
-        version: https://codeload.github.com/kurone-kito/idd-skill/tar.gz/1f90787ebf4021673ce6e5eb69741df331fd2037
+        specifier: github:kurone-kito/idd-skill#v0.13.0
+        version: https://codeload.github.com/kurone-kito/idd-skill/tar.gz/be88c24664acb78ff826d97141fe30987125527a
       '@kurone-kito/lint-staged-config':
         specifier: ^0.23.0-alpha.1
         version: 0.23.0-alpha.1(cspell@10.1.1)(lint-staged@17.4.1)
@@ -643,10 +643,10 @@ packages:
       cspell:
         optional: true
 
-  '@kurone-kito/idd-skill@https://codeload.github.com/kurone-kito/idd-skill/tar.gz/1f90787ebf4021673ce6e5eb69741df331fd2037':
-    resolution: {gitHosted: true, integrity: sha512-wyqH4WUEzHICrwA79EE62+ZRCIdFyKb2kF1+18ELANp8+39iD5/NHzIAucxm9AK05EROwwbbr9Dtgqvm6J/BBw==, tarball: https://codeload.github.com/kurone-kito/idd-skill/tar.gz/1f90787ebf4021673ce6e5eb69741df331fd2037}
-    version: 0.11.0
-    engines: {node: ^22.23.2 || ^24.2.0 || >=26.0.0, pnpm: ^12.4.0}
+  '@kurone-kito/idd-skill@https://codeload.github.com/kurone-kito/idd-skill/tar.gz/be88c24664acb78ff826d97141fe30987125527a':
+    resolution: {gitHosted: true, integrity: sha512-bDV1Y5/tPCTOXJly8mjMoVm0m3ye+G1r52Qy2us5Q3QfHSywZXcVokfPD1iL1JzyiUOWhXpFyCfma8HVCoVMfw==, tarball: https://codeload.github.com/kurone-kito/idd-skill/tar.gz/be88c24664acb78ff826d97141fe30987125527a}
+    version: 0.13.0
+    engines: {node: ^22.23.2 || ^24.2.0 || >=26.0.0}
     hasBin: true
 
   '@kurone-kito/lint-staged-config@0.23.0-alpha.1':
@@ -1926,7 +1926,7 @@ snapshots:
     optionalDependencies:
       cspell: 10.1.1
 
-  '@kurone-kito/idd-skill@https://codeload.github.com/kurone-kito/idd-skill/tar.gz/1f90787ebf4021673ce6e5eb69741df331fd2037': {}
+  '@kurone-kito/idd-skill@https://codeload.github.com/kurone-kito/idd-skill/tar.gz/be88c24664acb78ff826d97141fe30987125527a': {}
 
   '@kurone-kito/lint-staged-config@0.23.0-alpha.1(cspell@10.1.1)(lint-staged@17.4.1)':
     optionalDependencies:
